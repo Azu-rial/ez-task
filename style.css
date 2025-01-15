@@ -1,0 +1,133 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background-color: #0066ff;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Section */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin-top: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Input Section */
+#task-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#task-input input,
+#task-input button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+#task-input input:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 8px #00c3ff;
+}
+
+#task-input button {
+    background: #0066ff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#task-input button:hover {
+    background: #0052d4;
+    transform: translateY(-2px);
+}
+
+/* Task List */
+.task-section h2 {
+    font-size: 1.8rem;
+    color: #0066ff;
+    margin-bottom: 1rem;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.task-list li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list li.completed-task {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Buttons */
+.task-list li button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background-color: #00c853;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #ff5252;
+    color: white;
+}

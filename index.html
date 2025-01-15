@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EzTask - Improved Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>EzTask</h1>
+    </header>
+    <main>
+        <section id="task-input">
+            <input type="text" id="task-title" placeholder="Enter a task" aria-label="Task Title">
+            <input type="date" id="task-date" aria-label="Task Date">
+            <button id="add-task-btn">Add Task</button>
+        </section>
+        <p id="error-message" class="hidden">Please provide both a task title and date.</p>
+        <section id="tasks">
+            <div class="task-section">
+                <h2>Pending Tasks</h2>
+                <ul id="pending-tasks" class="task-list"></ul>
+            </div>
+            <div class="task-section">
+                <h2>Completed Tasks</h2>
+                <ul id="completed-tasks" class="task-list"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Made with ❤️ by Azu</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
