@@ -9,6 +9,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background 0.3s;
+}
+
+body.dark {
+    background: linear-gradient(to right, #1e1e2f, #3b3b5e);
+    color: #f0f0f0;
 }
 
 /* Header */
@@ -19,6 +25,9 @@ header {
     padding: 1.5rem 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
@@ -26,6 +35,36 @@ h1 {
     font-weight: 700;
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* This will center the title */
+    flex-grow: 1; /* Allow the title to take up remaining space */
+    text-align: center; /* Ensure the text is centered inside its container */
+}
+
+/* Toggle Theme button */
+#theme-toggle {
+    background: #fff;
+    color: #0066ff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Adjustments for dark theme */
+body.dark #theme-toggle {
+    background: #444;
+    color: #fff;
+}
+
+#theme-toggle:hover {
+    background: #e0e0e0;
+}
+
+body.dark #theme-toggle {
+    background: #444;
+    color: #fff;
 }
 
 /* Main Section */
@@ -37,6 +76,12 @@ main {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark main {
+    background: #2b2b3f;
+    color: #ccc;
 }
 
 .hidden {
@@ -83,11 +128,71 @@ main {
     transform: translateY(-2px);
 }
 
+/* Task Summary */
+#task-summary {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#progress-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+#progress-fill {
+    background: #00c853;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+/* Filter Buttons */
+#filters {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    background: #fff;
+    color: #0066ff;
+    border: 1px solid #0066ff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: #0066ff;
+    color: #fff;
+}
+
+body.dark .filter-btn {
+    background: #444;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+
+body.dark .filter-btn.active {
+    background: #00c3ff;
+    color: #000;
+}
+
 /* Task List */
 .task-section h2 {
     font-size: 1.8rem;
     color: #0066ff;
     margin-bottom: 1rem;
+}
+
+body.dark .task-section h2 {
+    color: #00c3ff;
 }
 
 .task-list {
@@ -106,6 +211,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
 .task-list li.completed-task {
@@ -113,7 +220,6 @@ main {
     color: #155724;
 }
 
-/* Buttons */
 .task-list li button {
     border: none;
     padding: 0.5rem 1rem;
@@ -130,4 +236,13 @@ main {
 .delete-btn {
     background-color: #ff5252;
     color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
