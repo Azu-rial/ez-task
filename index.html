@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,3 +48,66 @@
     <script src="script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EzTask - Enhanced Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/static/manifest.json">
+</head>
+<body>
+    <header>
+        <h1>EzTask</h1>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <section id="task-input">
+            <input type="text" id="task-title" placeholder="Enter a task" aria-label="Task Title">
+            <input type="date" id="task-date" aria-label="Task Date">
+            <button id="add-task-btn">Add Task</button>
+        </section>
+        <p id="error-message" class="hidden">Please provide both a task title and date.</p>
+        <section id="task-summary">
+            <p><strong>Progress:</strong> <span id="progress-text">0/0</span></p>
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </section>
+        <section id="filters">
+            <button data-filter="all" class="filter-btn active">All</button>
+            <button data-filter="pending" class="filter-btn">Pending</button>
+            <button data-filter="completed" class="filter-btn">Completed</button>
+        </section>
+        <section id="tasks">
+            <div class="task-section">
+                <h2>Pending Tasks</h2>
+                <ul id="pending-tasks" class="task-list"></ul>
+            </div>
+            <div class="task-section">
+                <h2>Completed Tasks</h2>
+                <ul id="completed-tasks" class="task-list"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Made with ❤️ by Azu</p>
+    </footer>
+    <script src="script.js"></script>
+    
+    <!-- Service Worker Registration Script -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+>>>>>>> f385c08798b15994de2a3bf5b60d49b6c4559701

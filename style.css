@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* General Styling */
 body {
     font-family: 'Roboto', sans-serif;
@@ -246,3 +247,253 @@ body.dark .task-section h2 {
         opacity: 1;
     }
 }
+=======
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+body.dark {
+    background: linear-gradient(to right, #1e1e2f, #3b3b5e);
+    color: #f0f0f0;
+}
+
+/* Header */
+header {
+    background-color: #0066ff;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* This will center the title */
+    flex-grow: 1; /* Allow the title to take up remaining space */
+    text-align: center; /* Ensure the text is centered inside its container */
+}
+
+/* Toggle Theme button */
+#theme-toggle {
+    background: #fff;
+    color: #0066ff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Adjustments for dark theme */
+body.dark #theme-toggle {
+    background: #444;
+    color: #fff;
+}
+
+#theme-toggle:hover {
+    background: #e0e0e0;
+}
+
+body.dark #theme-toggle {
+    background: #444;
+    color: #fff;
+}
+
+/* Main Section */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin-top: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark main {
+    background: #2b2b3f;
+    color: #ccc;
+}
+
+.hidden {
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Input Section */
+#task-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#task-input input,
+#task-input button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+#task-input input:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 8px #00c3ff;
+}
+
+#task-input button {
+    background: #0066ff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#task-input button:hover {
+    background: #0052d4;
+    transform: translateY(-2px);
+}
+
+/* Task Summary */
+#task-summary {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#progress-bar {
+    background: #e0e0e0;
+    border-radius: 5px;
+    height: 20px;
+    width: 100%;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+#progress-fill {
+    background: #00c853;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+/* Filter Buttons */
+#filters {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.filter-btn {
+    background: #fff;
+    color: #0066ff;
+    border: 1px solid #0066ff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background: #0066ff;
+    color: #fff;
+}
+
+body.dark .filter-btn {
+    background: #444;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+
+body.dark .filter-btn.active {
+    background: #00c3ff;
+    color: #000;
+}
+
+/* Task List */
+.task-section h2 {
+    font-size: 1.8rem;
+    color: #0066ff;
+    margin-bottom: 1rem;
+}
+
+body.dark .task-section h2 {
+    color: #00c3ff;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.task-list li {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.task-list li.completed-task {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.task-list li button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background-color: #00c853;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #ff5252;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+>>>>>>> f385c08798b15994de2a3bf5b60d49b6c4559701
